@@ -21,7 +21,7 @@
 #define ADC6 A5
 
 /*
- * defines macros movements
+ * Defines macros movements
  */
 #define MOVEMENT_ONE "a"
 #define MOVEMENT_TWO "b"
@@ -32,12 +32,12 @@
 
 /*
  * Defines macros for input and output pins
- * (serial[Rx, Tx], LED and button)
+ * (serial[Tx, Rx], LED and button)
  */
 #define TX 12
 #define RX 2
 #define LED1 10
-//#define LED2 11
+#define LED2 11 // not used
 #define PUSH 3
 
 /*
@@ -87,7 +87,7 @@ void setup() {
     vw_set_ptt_inverted(true); // Required for DR3100
     vw_setup(2000);
 
-    // initialize serial communication at 9600 bits per second:
+    // initialize serial communication at 9600 bauds per second:
     Serial.begin(9600);
 }
 
@@ -101,7 +101,7 @@ void loop() {
     mov5 = analogRead(ADC5);
     mov6 = analogRead(ADC6);
 
-    // cast analog input to voltage
+    // cast analog input to voltage level
     outmov1 = mov1 * (5.0 / 1023.0);
     outmov2 = mov2 * (5.0 / 1023.0);
     outmov3 = mov3 * (5.0 / 1023.0);
@@ -110,7 +110,7 @@ void loop() {
     outmov6 = mov6 * (5.0 / 1023.0);
 
     /*
-     * Check if voltage is higer than 3 and 
+     * Check if voltage is higer than 3 volts and 
      * check last data
      */
     if (outmov1 > 3 & last != 1) {
