@@ -2,6 +2,10 @@
  
  It is a source corde that allows to transmit control commands to receptor
  
+ <br>
+  <img height="300" src="https://github.com/jorzet/TimberManTxControl/blob/master/images/Captura%20de%20pantalla%202018-04-23%20a%20la(s)%2022.49.02.png">
+</br>
+ 
  <strong>Note 1:</strong> this project is a compilation of 3 projects:
 
   * TimberManAllegro
